@@ -1,3 +1,5 @@
+import React, { useContext } from 'react';
+
 const Header = () => (
     <header>
       <h1>My Movie App</h1>

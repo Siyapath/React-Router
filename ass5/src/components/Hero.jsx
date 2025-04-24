@@ -1,3 +1,4 @@
+import React from 'react';
 const Hero = () => (
     <section className="hero">
       <h2>Welcome to the Movies!</h2>
