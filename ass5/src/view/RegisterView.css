@@ -1,0 +1,70 @@
+/* RegisterView.css */
+
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.register-view {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0c0b0b;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  z-index: 1000;
+}
+
+.register-view form {
+  background-color: #575353;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.register-view h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333333;
+  font-size: 28px;
+}
+
+.register-view input {
+  margin-bottom: 15px;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #7e4545;
+  transition: border-color 0.3s ease;
+}
+
+.register-view input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.register-view button {
+  padding: 12px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.register-view button:hover {
+  background-color: #25e29a;
+}
