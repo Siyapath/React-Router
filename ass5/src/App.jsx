@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomeView from './views/HomeView';
-import LoginView from './views/LoginView';
-import RegisterView from './views/RegisterView';
-import MoviesView from './views/MoviesView';
-import GenreView from './views/GenreView';
-import DetailView from './views/DetailView';
-import ErrorView from './views/ErrorView';
+import HomeView from './view/HomeView';
+import LoginView from './view/LoginView';
+import RegisterView from './view/RegisterView';
+import MoviesView from './view/MoviesView';
+import GenreView from './view/GenreView';
+import DetailView from './view/DetailView';
+import ErrorView from './view/ErrorView';
 
 function App() {
   return (

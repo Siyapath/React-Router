@@ -1,9 +1,14 @@
 import React from 'react';
-const Hero = () => (
-    <section className="hero">
-      <h2>Welcome to the Movies!</h2>
-      <p>Check out the latest and greatest movies now playing.</p>
-    </section>
+import './Hero.css';
+
+const Hero = () => {
+  return (
+    <div className="hero">
+      <h1 className="site-title">SeaFlix</h1>
+      <h2>Stream Unlimited Movies And TvShows</h2>
+      <p>Watch anywhere. Cancel anytime.</p>
+    </div>
   );
-  export default Hero;
-  
+};
+
+export default Hero;
