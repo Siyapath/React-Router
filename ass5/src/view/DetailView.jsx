@@ -1,62 +1,38 @@
-import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import './DetailView.css';  
 const DetailView = () => {
-  const { id } = useParams();
-  const [details, setDetails] = useState(null);
-  const [trailers, setTrailers] = useState([]);
-
-  const fetchMovieDetails = async () => {
-    const res = await axios.get(`https://api.themoviedb.org/3/movie/${id}`, {
-      params: { api_key: '313401cfcd7f2a45472da9fe09fd9efd' }
-    });
-    setDetails(res.data);
-  };
-
-  const fetchMovieVideos = async () => {
-    const res = await axios.get(`https://api.themoviedb.org/3/movie/${id}/videos`, {
-      params: { api_key: '313401cfcd7f2a45472da9fe09fd9efd' }
-    });
-    const trailers = res.data.results.filter(v => v.type === 'Trailer' && v.site === 'YouTube');
-    setTrailers(trailers);
-  };
+  const { id } = useParams();  // Grab the movie ID from the URL
+  const [movieDetails, setMovieDetails] = useState(null);
 
   useEffect(() => {
-    fetchMovieDetails();
-    fetchMovieVideos();
-  }, [id]);
+    axios
+      .get(`https://api.themoviedb.org/3/movie/${id}`, {
+        params: {
+          api_key: import.meta.env.VITE_TMDB_API_KEY,
+          language: 'en-US',
+        },
+      })
+      .then((res) => {
+        setMovieDetails(res.data); // Set the movie details based on the id
+      })
+      .catch((err) => console.error('Error fetching movie details:', err));
+  }, [id]); // Fetch data whenever the id changes
 
-  if (!details) return <p>Loading...</p>;
+  if (!movieDetails) return <p>Loading...</p>;
 
   return (
-    <div>
-      <h2>{details.title}</h2>
-      <p><strong>Overview:</strong> {details.overview}</p>
-      <p><strong>Release Date:</strong> {details.release_date}</p>
-      <p><strong>Runtime:</strong> {details.runtime} min</p>
-      <p><strong>Genres:</strong> {details.genres.map(g => g.name).join(', ')}</p>
-      <p><strong>Rating:</strong> {details.vote_average}</p>
-      <p><strong>Status:</strong> {details.status}</p>
-
-      <h3>Trailers</h3>
-      {trailers.length > 0 ? (
-        trailers.map(trailer => (
-          <div key={trailer.id}>
-            <h4>{trailer.name}</h4>
-            <iframe
-              width="560"
-              height="315"
-              src={`https://www.youtube.com/embed/${trailer.key}`}
-              title={trailer.name}
-              frameBorder="0"
-              allowFullScreen
-            ></iframe>
-          </div>
-        ))
-      ) : (
-        <p>No trailers found.</p>
-      )}
+    <div className="detail-view">
+      <h1>{movieDetails.title}</h1>
+      <img
+        src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
+        alt={movieDetails.title}
+      />
+      <p>{movieDetails.overview}</p>
+      <p>Release Date: {movieDetails.release_date}</p>
+      <p>Rating: {movieDetails.vote_average}</p>
+      {/* You can add more details like genres, production companies, etc. */}
     </div>
   );
 };

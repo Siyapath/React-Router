@@ -1,42 +1,56 @@
+/* Header.css */
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 25px;
-  background-color: rgba(0, 0, 0, 0.829);
-  color: white;
+  padding: 1rem 2rem;
+  background-color: #1f1f1f;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-.header .logo {
-  font-size: 24px;
-  font-weight: bold;
-  font-family: 'Pacifico', cursive;
-  color: #ffcc00;
-}
-
-.header .auth-buttons {
+.logo {
   display: flex;
-  gap: 10px;
+  align-items: center;
+  text-decoration: none;
 }
 
-.header .auth-buttons button {
-  padding: 8px 16px;
-  background-color: #ffcc00;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
+.logo img {
+  height: 40px;
+  width: auto;
 }
 
-.header .auth-buttons button:hover {
-  background-color: #e6b800;
+.header h1 {
+  font-size: 1.25rem;
+  margin-left: 1rem;
+  color: #f0f0f0;
+  flex: 1;
+  text-align: center;
 }
 
-.logo{
-  width: 100px;
-  border-radius: 10px;
+.header-buttons {
+  display: flex;
+  gap: 0.75rem;
 }
 
 .header-buttons button {
-  margin-right: 10px; 
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.header-buttons button:hover {
+  background-color: #0056b3;
+}
+
+.header .welcome {
+  margin: 0;
+  font-size: 1rem;
+  color: #ccc;
 }

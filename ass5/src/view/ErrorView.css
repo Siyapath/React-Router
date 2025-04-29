@@ -1,0 +1,48 @@
+/* ErrorView.css */
+
+/* Main container for the error page */
+.error-view {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 3rem;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: #333;
+  }
+  
+  /* Styling for the error title */
+  .error-view h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #e74c3c;
+    margin-bottom: 1rem;
+  }
+  
+  /* Message below the title */
+  .error-view p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-top: 1rem;
+    line-height: 1.5;
+  }
+  
+  /* Button to navigate back to home page */
+  .error-view .back-home-button {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .error-view .back-home-button:hover {
+    background-color: #2980b9;
+  }
+  
